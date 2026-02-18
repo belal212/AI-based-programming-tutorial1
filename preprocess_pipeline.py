@@ -57,7 +57,14 @@ def extract_text_from_epub(epub_path):
     text = ""
     for item in book.get_items():
         if item.get_type() == ebooklib.ITEM_DOCUMENT:
-            text += item.get_content().decode('utf-8')
+            try:
+                text += item.get_content().decode('utf-8')
+            except UnicodeDecodeError:
+                # Try alternative encoding if utf-8 fails
+                try:
+                    text += item.get_content().decode('latin-1')
+                except:
+                    continue
     return text.strip()
 
 
@@ -96,7 +103,7 @@ def preprocess_document(file_path):
         file_type = "Word"
     elif file_path.endswith('.xlsx'):
         tables = extract_tables_from_excel(file_path)
-        text = str(tables)
+        text = json.dumps(tables)  # Use JSON serialization to preserve structure
         file_type = "Excel"
     elif file_path.endswith('.pptx'):
         text = extract_text_from_ppt(file_path)
