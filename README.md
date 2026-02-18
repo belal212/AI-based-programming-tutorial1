@@ -25,14 +25,6 @@ Install required dependencies:
 pip install -r requirements.txt
 ```
 
-Download necessary NLTK resources (if needed):
-```python
-import nltk
-nltk.download('punkt')
-nltk.download('stopwords')
-nltk.download('wordnet')
-```
-
 ### Usage
 1. Place your documents (PDF, DOCX, XLSX, PPTX, or EPUB files) in the repository directory
 2. Run the preprocessing script:

@@ -6,6 +6,7 @@ This script extracts and normalizes data from various document types for LLM app
 import json
 import os
 from pathlib import Path
+from datetime import datetime
 
 import pdfplumber
 from docx import Document
@@ -63,7 +64,7 @@ def extract_text_from_epub(epub_path):
                 # Try alternative encoding if utf-8 fails
                 try:
                     text += item.get_content().decode('latin-1')
-                except:
+                except Exception:
                     continue
     return text.strip()
 
@@ -116,7 +117,7 @@ def preprocess_document(file_path):
     
     metadata = {
         "author": "Unknown",
-        "date": "2023-10-01",
+        "date": datetime.now().strftime("%Y-%m-%d"),
         "source": os.path.basename(file_path)
     }
     
