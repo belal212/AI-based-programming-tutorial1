@@ -51,3 +51,9 @@ import json
 result = preprocess_document('your_file.pdf')
 print(json.dumps(result, indent=4))
 ```
+
+### Example Usage
+Run the example script to see different usage patterns:
+```bash
+python example_usage.py
+```
