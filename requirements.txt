@@ -1,0 +1,9 @@
+pandas
+PyPDF2
+python-docx
+python-pptx
+tabula-py
+pdfplumber
+openpyxl
+pillow
+ebooklib
