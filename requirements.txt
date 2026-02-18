@@ -1,0 +1,6 @@
+pandas
+python-docx
+python-pptx
+pdfplumber
+openpyxl
+ebooklib

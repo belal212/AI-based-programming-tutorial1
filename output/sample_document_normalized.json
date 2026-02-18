@@ -1,0 +1,9 @@
+{
+    "file_type": "Word",
+    "content": "Sample Document This is a sample document for the preprocessing pipeline. It demonstrates extracting text from Word documents. The pipeline will normalize this content into JSON format.",
+    "metadata": {
+        "author": "Unknown",
+        "date": "2026-02-18",
+        "source": "sample_document.docx"
+    }
+}
